@@ -1,0 +1,343 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  background-image: linear-gradient(to right, rgba(200, 200, 255, 0.2), rgba(255, 255, 255, 0.2)), 
+                    linear-gradient(to bottom, rgba(200, 200, 255, 0.2), rgba(255, 255, 255, 0.2));
+  background-size: 100% 100%;
+  background-blend-mode: soft-light;
+}
+
+
+
+/* By Air gradient background */
+body.by-air {
+  background: linear-gradient(
+    to bottom, 
+    #c3d7fc,   /* Light sky blue at the top */
+    #95c3ff    /* Mid to deeper sky blue at the bottom */
+  );
+  transition: background 0.5s ease-in-out;
+}
+
+/* By Sea gradient background */
+body.by-sea {
+  background: linear-gradient(
+    to bottom, 
+    #cfffff,   /* Light sea blue at the top */
+    #86cce7    /* Mid to deeper ocean blue at the bottom */
+  );
+  transition: background 0.5s ease-in-out;
+}
+
+
+/* Button styling */
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.deleteCalc {
+  background-color: #f44336;
+}
+
+.deleteCalc:hover {
+  background-color: #e41f1f;
+}
+
+#newcalc {
+  margin-top: 30px;
+}
+
+/* Calculator instances */
+.calculator-instance {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 300px;
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.calculator-instance input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.results {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.results div {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.results .value {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.rate, .warehouse {
+  font-style: italic;
+  color: #666;
+}
+
+#combinedTotal {
+  font-size: 24px;
+  color: #ff5722;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Tabs styles */
+.tab {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+
+/* Styles for the tabs */
+/* Styles for the tabs */
+.tab button {
+  background-color: inherit;
+  background-color: #ddeeff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  color: black; /* Set the button text color to black */
+  transition: background-color 0.3s ease;
+}
+
+/* Highlight active tab */
+.tab button.active {
+  background-color: #66a3ff;  /* Active tab color */
+  color: black; /* Keep font color black even when active */
+  border-bottom: 4px solid #0044cc; /* Clear visual feedback with border */
+}
+
+.tab button:hover {
+  background-color: #cce6ff;
+}
+
+
+
+.tabcontent {
+  display: none;
+  padding: 20px;
+  color: #666;
+}
+
+/* Style for the dropdown */
+select {
+  width: 200px; 
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f4f4f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns%3D%22http://www.w3.org/2000/svg%22 fill%3D%22%23333%22 viewBox%3D%220 0 24 24%22%3E%3Cpath d%3D%22M7 10l5 5 5-5z%22/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:focus {
+  border-color: #4CAF50; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+select:hover {
+  border-color: #4CAF50;
+}
+
+/* Date input styling */
+input[type="date"] {
+  width: 20%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f4f4f9;
+  color: #333;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="date"]:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.sub-calculator {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 280px;
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1 1 280px; /* Set flex-basis for width and allow wrapping */
+}
+
+.sub-calculator input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.sub-calculator .results {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.sub-calculator .results div {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.sub-calculator .results .value {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.sub-calculator button {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sub-calculator button:hover {
+  background-color: #e64a19;
+}
+
+.volume-weight {
+  margin-top: 10px;
+}
+
+.volume-weight input {
+  width: 80%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.volume-weight label {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Styling for the Invoice Number input */
+#invoiceNumberOcean, #invoiceNumberAir {
+  width: 50%; /* Adjust the width to your liking */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Rounded corners */
+  background-color: #f4f4f9; /* Match the background aesthetic */
+  color: #333; /* Text color */
+  outline: none; /* Remove the default focus outline */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for modern effect */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#invoiceNumberOcean:focus, #invoiceNumberAir:focus {
+  border-color: #4CAF50; /* Match the focus color with the rest of the inputs */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on focus */
+}
+
+button{
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:active{
+  box-shadow: #333;
+}
+
+/* Counter container styles */
+.counter-container {
+  display: flex;
+  justify-content: space-between; /* Spread the two counters evenly */
+  padding: 8px 15px; /* Smaller padding */
+  background-color: #f9f9f9; /* Light background to match the site style */
+  border-radius: 10px; /* Rounded edges */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 20px auto; /* Center the box and add space below */
+  font-family: Arial, sans-serif; /* Simple, clean font */
+  text-align: center;
+  max-width: 20%; /* Smaller width for the counter */
+}
+
+/* Individual counter item styles */
+.counter-item {
+  font-size: 14px; /* Smaller font size */
+  font-weight: bold;
+  color: #333; /* Neutral text color */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the text */
+}
+
+/* Number styles */
+.counter-number {
+  font-size: 18px; /* Reduced number size */
+  color: #66a3ff; /* Match the primary blue color for numbers */
+  margin-right: 5px;
+}
+
+/* Hover effect for a little interactivity */
+.counter-container:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle hover effect */
+  transition: box-shadow 0.3s ease;
+}
+
+.totcol{
+  color: red;
+}

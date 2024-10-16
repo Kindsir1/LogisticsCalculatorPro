@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logistics Calculator</title>
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Tab Navigation -->
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'ByAir')">By Air</button>
+    <button class="tablinks" onclick="openTab(event, 'ByOcean')">By Ocean</button>
+  </div>
+
+  <!-- Counter Display -->
+  <div id="calcCounter" class="counter-container"></div>
+
+  <!-- By Air Tab Content -->
+  <div id="ByAir" class="tabcontent">
+    <h3 style="color: black;">By Air</h3>
+    <h3>Combined Total of All Calculators: <span class="totcol" id="combinedTotalAir">0.00</span></h3>
+
+    <!-- Dropdown for calculator count -->
+    <label for="numCalculatorsAir">Select number of calculators to add:</label>
+    <select id="numCalculatorsAir">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+    <!-- Invoice and Date Inputs -->
+    <input type="text" id="invoiceNumberAir" placeholder="Invoice Number" style="width: 20%; padding: 10px; margin-bottom: 20px;">
+    <input type="date" id="invoiceDateAir" style="width: 20%; padding: 10px; margin-bottom: 20px;">
+
+    <!-- Buttons -->
+    <button style="background-color: rgb(37, 145, 213);" id="addCalcAir">Add Calculator</button>
+    <button style="background-color: rgb(0, 95, 154);" id="addCalcSharedWR">Add WR Calculator</button>
+    <button onclick="calculateAllAir()">Calculate All</button>
+    <button style="background-color: orange;" id="downloadExcelAir">Download Excel</button>
+
+    <!-- Calculator Instances -->
+    <div id="newcalcAir"></div>
+  </div>
+
+  <!-- By Ocean Tab Content -->
+  <div id="ByOcean" class="tabcontent">
+    <h3 style="color: black;">By Ocean</h3>
+    <h3>Combined Total of All Calculators: <span class="totcol" id="combinedTotalOcean">0.00</span></h3>
+
+    <!-- Dropdown for calculator count -->
+    <label for="numCalculatorsOcean">Select number of calculators to add:</label>
+    <select id="numCalculatorsOcean">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+    <!-- Invoice and Date Inputs -->
+    <input type="text" id="invoiceNumberOcean" placeholder="Invoice Number" style="width: 20%; padding: 10px; margin-bottom: 20px;">
+    <input type="date" id="invoiceDateOcean" style="width: 20%; padding: 10px; margin-bottom: 20px;">
+
+    <!-- Buttons -->
+    <button style="background-color: rgb(37, 145, 213);" id="addCalcOcean">Add Calculator</button>
+    <button style="background-color: rgb(0, 95, 154);" id="addCalcSharedWROcean">Add WR Calculator</button>
+    <button onclick="calculateAllOcean()">Calculate All</button>
+    <button style="background-color: orange;" id="downloadExcelOcean">Download Excel</button>
+
+    <!-- Calculator Instances -->
+    <div id="newcalcOcean"></div>
+  </div>
+
+  <!-- Template for WR Calculators -->
+  <template id="wrCalcTemplate">
+    <div class="calculator-instance shared-wr">
+      <input type="text" class="invendproInput" placeholder="Invendpro Receipt Number">
+      <input type="text" class="warehouseInput" placeholder="Warehouse Number">
+      <div class="totalamount">
+        Total amount = <input type="number" class="value" value="0.00">
+      </div>
+      <button class="deleteCalc">Delete</button>
+      <div class="subcalc-container"></div>
+    </div>
+  </template>
+
+  <!-- JavaScript -->
+  <script src="calculator.js"></script>
+  <script src="ocean.js"></script>
+  <script src="oceanWR.js"></script>
+  <script src="opentab.js"></script>
+  <script src="reset.js"></script>
+  <script src="calcCounter.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+  <script src="downloaadexcel.js"></script>
+
+  <script>
+    
+  </script>
+
+</body>
+</html>
